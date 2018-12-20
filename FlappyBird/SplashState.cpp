@@ -13,6 +13,7 @@ SplashState::SplashState(GameDataRef data) : _data(data)
 
 void SplashState::Init()
 {
+	std::cout << "Initializing Splash State" << std::endl;
 	_data->assets.LoadTexture("Splash State Background", SPLASH_SCREEN_BACKGROUND_FILEPATH);
 	_background.setTexture(this->_data->assets.GetTexture("Splash State Background"));
 }

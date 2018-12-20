@@ -1,5 +1,7 @@
 #include "Game.hpp"
 #include "SplashState.hpp"
+#include <stdlib.h>
+#include <time.h>
 
 
 
@@ -8,6 +10,7 @@
 
 Game::Game(int width, int height, std::string title)
 {
+	srand(time(NULL));
 	_data->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);
 	_data->machine.AddState(StateRef(new SplashState(this->_data)));
 

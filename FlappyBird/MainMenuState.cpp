@@ -1,5 +1,5 @@
 #include "MainMenuState.hpp"
-
+#include "GameState.hpp"
 #include <sstream>
 #include "DEFINITIONS.hpp"
 #include <iostream>
@@ -15,6 +15,7 @@ MainMenuState::MainMenuState(GameDataRef data) : _data(data)
 */
 void MainMenuState::Init()
 {
+	std::cout << "Initializing MainMenu State" << std::endl;
 	// Load the textures and assign them to a string?
 	_data->assets.LoadTexture("Main Menu Background", MAIN_MENU_BACKGROUND_FILEPATH);
 	_data->assets.LoadTexture("Game Title", GAME_TITLE_FILEPATH);
@@ -49,7 +50,7 @@ void MainMenuState::HandleInput()
 		// if play button is pressed
 		if (this->_data->input.IsSpriteClicked(this->_playButton, sf::Mouse::Left, this->_data->window))
 		{
-			std::cout << "go to game" << std::endl;
+			_data->machine.AddState(StateRef(new GameState(_data)), true);
 		}
 	}
 }

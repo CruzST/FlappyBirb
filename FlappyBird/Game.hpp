@@ -9,15 +9,15 @@
 #include "InputManager.hpp"
 
 
-struct GameData
+struct GameData		// accessable by all classes
 {
-	StateMachine machine;
-	sf::RenderWindow window;
-	AssetManager assets;
-	InputManager input;
+	StateMachine machine;				// obj of the state of the machine
+	sf::RenderWindow window;			// window of the app
+	AssetManager assets;				// obj of an asset manager
+	InputManager input;					// obj of an input manager
 };
 
-typedef std::shared_ptr<GameData> GameDataRef;		// used when accessing the struct members
+typedef std::shared_ptr<GameData> GameDataRef;		// used when accessing the struct members above
 
 class Game
 {
@@ -26,9 +26,9 @@ public:
 	~Game();
 
 private:
-	const float dt = 1.0f / 60.0f;		// framerate, update per second
+	const float dt = 1.0f / 60.0f;		// framerate, update per second fps
 	sf::Clock _clock;
-	GameDataRef _data = std::make_shared<GameData>();
+	GameDataRef _data = std::make_shared<GameData>();			// used to access the gamedata states
 	void Run();	// used to start game
 
 };
