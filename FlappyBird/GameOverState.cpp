@@ -11,6 +11,10 @@ GameOverState::GameOverState(GameDataRef data) : _data(data)
 }
 
 
+
+/*
+	Function will init the game over screen
+*/
 void GameOverState::Init()
 {
 	std::cout << "Initializing GameOver State" << std::endl;

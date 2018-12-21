@@ -8,8 +8,8 @@
 class GameOverState : public State
 {
 public:
-	GameOverState(GameDataRef data);
-	~GameOverState();
+	GameOverState(GameDataRef data);					
+	~GameOverState();									// not used
 
 	void Init();
 

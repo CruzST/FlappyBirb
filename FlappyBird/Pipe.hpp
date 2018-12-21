@@ -10,7 +10,7 @@ class Pipe
 {
 public:
 	Pipe(GameDataRef data);
-	~Pipe();
+	~Pipe();													// not used
 
 	void DrawPipes();
 	void SpawnBottomPipe();
@@ -18,10 +18,11 @@ public:
 	void SpawnInvisiblePipe();
 	void MovePipes(float dt);
 	void RandomizePipeOffset();
+	const std::vector<sf::Sprite> &GetSprites() const;
 
 private:
 	GameDataRef _data;
-	std::vector<sf::Sprite> pipeSprites;
+	std::vector<sf::Sprite> _pipeSprites;
 	int _landHeight;
 	int _pipeSpawnYOffset;
 };

@@ -22,17 +22,19 @@ bool InputManager::IsSpriteClicked(sf::Sprite object, sf::Mouse::Button button, 
 	return false;
 }
 
-sf::Vector2i GetMousePosition(sf::RenderWindow &window)
+
+/*
+	Function gets mouse position
+*/
+sf::Vector2i InputManager::GetMousePosition(sf::RenderWindow &window)
 {
 	return sf::Mouse::getPosition(window);
 }
 
-// Not used
+/**** Not used ****/
 InputManager::InputManager()
 {
 }
-
-
 InputManager::~InputManager()
 {
 }

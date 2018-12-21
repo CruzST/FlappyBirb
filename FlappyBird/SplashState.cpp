@@ -4,13 +4,18 @@
 #include <iostream>
 #include "MainMenuState.hpp"
 
-
+/*
+	Doesn't do anything but pass it the data from game.hpp
+*/
 SplashState::SplashState(GameDataRef data) : _data(data)
 {
 
 }
 
 
+/*
+	Init the splash screen
+*/
 void SplashState::Init()
 {
 	std::cout << "Initializing Splash State" << std::endl;
@@ -19,6 +24,9 @@ void SplashState::Init()
 }
 
 
+/*
+	Only input allowed on the splash screen is the X window
+*/
 void SplashState::HandleInput()
 {
 	sf::Event event;
@@ -31,6 +39,10 @@ void SplashState::HandleInput()
 	}
 }
 
+
+/*
+	Upon updating, it will be sent to the main menu state
+*/
 void SplashState::Update(float dt)
 {
 	if (_clock.getElapsedTime().asSeconds() >= SPLASH_STATE_SHOW_TIME)
@@ -40,6 +52,9 @@ void SplashState::Update(float dt)
 }
 
 
+/*
+	Draw the items to the splash
+*/
 void SplashState::Draw(float dt)
 {
 	_data->window.clear();
@@ -48,7 +63,7 @@ void SplashState::Draw(float dt)
 }
 
 
-// not used
+/**** not used ****/
 SplashState::~SplashState()
 {
 }

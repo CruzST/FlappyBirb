@@ -5,11 +5,6 @@
 #include <iostream>
 
 
-MainMenuState::MainMenuState(GameDataRef data) : _data(data)
-{
-
-}
-
 /*
 	Function will initialize the elements that make up the main menu.
 */
@@ -72,7 +67,11 @@ void MainMenuState::Draw(float dt)
 
 
 
-// not used
+/****not used ****/
+MainMenuState::MainMenuState(GameDataRef data) : _data(data)
+{
+
+}
 MainMenuState::~MainMenuState()
 {
 }

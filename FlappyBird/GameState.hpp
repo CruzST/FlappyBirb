@@ -6,12 +6,13 @@
 #include "Pipe.hpp"
 #include "Land.hpp"
 #include "Bird.hpp"
+#include "Collision.hpp"
 
 class GameState : public State
 {
 public:
 	GameState(GameDataRef data);
-	~GameState();
+	~GameState();						// not used
 
 	void Init();
 
@@ -25,6 +26,9 @@ private:
 	Pipe *pipe;
 	Land *land;
 	Bird *bird;
+	Collision collision;
+
+	int _gameState;
 	sf::Clock clock;
 };
 

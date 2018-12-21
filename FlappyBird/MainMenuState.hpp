@@ -9,10 +9,9 @@ class MainMenuState : public State
 {
 public:
 	MainMenuState(GameDataRef data);
-	~MainMenuState();
+	~MainMenuState();										// not used
 
 	void Init();
-
 	void HandleInput();
 	void Update(float dt);
 	void Draw(float dt);

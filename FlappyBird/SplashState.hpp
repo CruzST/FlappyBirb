@@ -8,10 +8,9 @@ class SplashState: public State
 {
 public:
 	SplashState(GameDataRef data);
-	~SplashState();
+	~SplashState();								// not used
 
 	void Init();
-
 	void HandleInput();
 	void Update(float dt);
 	void Draw(float dt);

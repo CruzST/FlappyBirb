@@ -2,69 +2,101 @@
 #include <iostream>
 
 
-
+/*
+	Constructor. takes the data from game.hpp
+	Sets the land height to the size of the land.png file
+*/
 Pipe::Pipe(GameDataRef data) : _data(data)
 {
 	_landHeight = _data->assets.GetTexture("Land").getSize().y;
 	_pipeSpawnYOffset = 0;
 }
 
+
+/*
+	Draw the pipes in the pipeSprite vector
+*/
 void Pipe::DrawPipes()
 {
-	for (unsigned short int i = 0; i < pipeSprites.size(); i++)
+	for (unsigned short int i = 0; i < _pipeSprites.size(); i++)
 	{
-		_data->window.draw(pipeSprites.at(i));
+		_data->window.draw(_pipeSprites.at(i));
 	}
 }
 
+/*
+	Determine a random pipe offset
+*/
 void Pipe::RandomizePipeOffset()
 {
 	_pipeSpawnYOffset = rand() % (_landHeight + 1);
 }
 
+/*
+	Spawn bottom pipe
+*/
 void Pipe::SpawnBottomPipe()
 {
 	sf::Sprite sprite(_data->assets.GetTexture("Pipe Up"));
 	sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height - _pipeSpawnYOffset);
-	pipeSprites.push_back(sprite);
+	_pipeSprites.push_back(sprite);
 }
 
+/*
+	Spawn top pipe
+*/
 void Pipe::SpawnTopPipe() 
 {
 	sf::Sprite sprite(_data->assets.GetTexture("Pipe Down"));
 	sprite.setPosition(_data->window.getSize().x, -_pipeSpawnYOffset);
-	pipeSprites.push_back(sprite);
+	_pipeSprites.push_back(sprite);
 }
 
+/*
+	Spawns an invisible pipe
+*/
 void Pipe::SpawnInvisiblePipe()
 {
 	sf::Sprite sprite(_data->assets.GetTexture("Pipe Up"));
 	sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height);
 	sprite.setColor(sf::Color(0, 0, 0, 0));	// invisible pipe
-	pipeSprites.push_back(sprite);
+	_pipeSprites.push_back(sprite);
 }
 
+
+/*
+	Move the pipes
+*/
 void Pipe::MovePipes(float dt)
 {
-	for (unsigned short int i = 0; i < pipeSprites.size(); i++)
+	for (unsigned short int i = 0; i < _pipeSprites.size(); i++)
 	{
-		if (pipeSprites.at(i).getPosition().x < 0 - pipeSprites.at(i).getGlobalBounds().width)
+		if (_pipeSprites.at(i).getPosition().x < 0 - _pipeSprites.at(i).getGlobalBounds().width)
 		{
-			pipeSprites.erase(pipeSprites.begin() + i);		// will delete the sprite as it exits the screen
+			_pipeSprites.erase(_pipeSprites.begin() + i);		// will delete the sprite as it exits the screen
 		}
 		else
 		{
-			float movement = PIPE_MOVEMENT_SPEED * dt;	// allows frame independant gameplay
+			float movement = PIPE_MOVEMENT_SPEED * dt;			// allows frame independant gameplay
 
-			pipeSprites.at(i).move(-movement, 0);
+			_pipeSprites.at(i).move(-movement, 0);
 		}
 	}
 }
 
 
+/*
+	return the vector of pipes
+*/
+const std::vector<sf::Sprite> &Pipe::GetSprites() const
+{
+	return _pipeSprites;
+}
 
 
-// not used
+
+
+/**** not used ****/
 Pipe::~Pipe()
 {
 }

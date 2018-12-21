@@ -3,22 +3,27 @@
 #include <stdlib.h>
 #include <time.h>
 
-
-
-
-
-
+/*
+	Constructor that will create a window based on the inputs
+	and run the game.
+*/
 Game::Game(int width, int height, std::string title)
 {
+	// set a random seed
 	srand(time(NULL));
+	// create the window
 	_data->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);
+	// add the first state, the splash screen.
 	_data->machine.AddState(StateRef(new SplashState(this->_data)));
-
+	// run the game
 	this->Run();
 }
 
 
-// Game loop
+/*
+	The game loop.
+	
+*/
 void Game::Run()
 {
 	float newTime, frameTime, interpolation;
@@ -52,6 +57,8 @@ void Game::Run()
 }
 
 
+
+/**** not used ****/
 Game::~Game()
 {
 }
