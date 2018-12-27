@@ -36,7 +36,7 @@
 #define PIPE_MOVEMENT_SPEED 200.0f
 
 // spawn rate of pipes
-#define PIPE_SPAWN_FREQUENCY 1.0f
+#define PIPE_SPAWN_FREQUENCY 1.5f
 
 // ground file path
 #define LAND_FILEPATH "Resources/res/Land.png"
@@ -76,3 +76,25 @@ enum GameStates
 
 // game over flash
 #define FLASH_SPEED 1500.0f
+
+
+// game over title
+#define GAME_OVER_TITLE_FILEPATH "Resources/res/Game-Over-Title.png"
+#define GAME_OVER_BODY_FILEPATH "Resources/res/Game-Over-Body.png"
+#define TIME_BEFORE_GAME_OVER_APPEARS 1.5f
+
+// high score txt
+#define HIGHSCORE_FILEPATH "Resources/Highscore.txt"
+
+// medal
+#define BRONZE_MEDAL_FILEPATH "Resources/res/Bronze-Medal.png"
+#define SILVER_MEDAL_FILEPATH "Resources/res/Silver-Medal.png"
+#define GOLD_MEDAL_FILEPATH "Resources/res/Gold-Medal.png"
+#define PLATINUM_MEDAL_FILEPATH "Resources/res/Platinum-Medal.png"
+
+#define BRONZE_MEDAL_SCORE 0
+#define SILVER_MEDAL_SCORE 5
+#define GOLD_MEDAL_SCORE 25
+#define PLATINUM_MEDAL_SCORE 50
+
+
