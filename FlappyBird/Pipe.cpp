@@ -65,10 +65,22 @@ void Pipe::SpawnInvisiblePipe()
 
 
 /*
+	Spawn a scoring pipe 
+*/
+void Pipe::SpawnScoringPipe()
+{
+	sf::Sprite sprite(_data->assets.GetTexture("Scoring Pipe"));
+	sprite.setPosition(_data->window.getSize().x, 0);
+	_scoringPipes.push_back(sprite);
+}
+
+
+/*
 	Move the pipes
 */
 void Pipe::MovePipes(float dt)
 {
+	// move regular pipes
 	for (unsigned short int i = 0; i < _pipeSprites.size(); i++)
 	{
 		if (_pipeSprites.at(i).getPosition().x < 0 - _pipeSprites.at(i).getGlobalBounds().width)
@@ -82,6 +94,21 @@ void Pipe::MovePipes(float dt)
 			_pipeSprites.at(i).move(-movement, 0);
 		}
 	}
+
+	// move the scoring pipes
+	for (unsigned short int i = 0; i < _scoringPipes.size(); i++)
+	{
+		if (_scoringPipes.at(i).getPosition().x < 0 - _scoringPipes.at(i).getGlobalBounds().width)
+		{
+			_scoringPipes.erase(_scoringPipes.begin() + i);		// will delete the sprite as it exits the screen
+		}
+		else
+		{
+			float movement = PIPE_MOVEMENT_SPEED * dt;			// allows frame independant gameplay
+
+			_scoringPipes.at(i).move(-movement, 0);
+		}
+	}
 }
 
 
@@ -91,6 +118,14 @@ void Pipe::MovePipes(float dt)
 const std::vector<sf::Sprite> &Pipe::GetSprites() const
 {
 	return _pipeSprites;
+}
+
+/*
+	return the scoring pipe vector
+*/
+std::vector<sf::Sprite> &Pipe::GetScoringSprites()
+{
+	return _scoringPipes;
 }
 
 

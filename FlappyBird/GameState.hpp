@@ -7,6 +7,8 @@
 #include "Land.hpp"
 #include "Bird.hpp"
 #include "Collision.hpp"
+#include "Flash.hpp"
+#include "HUD.hpp"
 
 class GameState : public State
 {
@@ -27,8 +29,12 @@ private:
 	Land *land;
 	Bird *bird;
 	Collision collision;
+	Flash *flash;
+	HUD *hud;
 
 	int _gameState;
 	sf::Clock clock;
+	int _score;
+
 };
 
