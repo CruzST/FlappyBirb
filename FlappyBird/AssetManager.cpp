@@ -45,6 +45,29 @@ sf::Font &AssetManager::GetFont(std::string name)
 	return this->_fonts.at(name);
 }
 
+
+/*
+void AssetManager::LoadSoundBuffer(std::string name, std::string fileName)
+{
+	sf::SoundBuffer soundBuffer;
+	if (soundBuffer.loadFromFile(fileName))
+	{
+		this->_soundBuffers[name] = soundBuffer;
+	}
+}
+
+sf::SoundBuffer &AssetManager::GetSoundBuffer(std::string name)
+{
+	return this->_soundBuffers.at(name);
+}
+*/
+
+
+
+
+
+
+
 /********* Not used **********/
 AssetManager::AssetManager()
 {

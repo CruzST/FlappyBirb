@@ -1,18 +1,21 @@
-﻿  Bird.cpp
+﻿  AssetManager.cpp
+  Bird.cpp
   Flash.cpp
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\flash.cpp(16): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\flash.cpp(19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\flash.cpp(26): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\flash.cpp(29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Game.cpp
+c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\game.cpp(13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   GameOverState.cpp
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gameoverstate.cpp(66): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gameoverstate.cpp(67): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gameoverstate.cpp(74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gameoverstate.cpp(81): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   GameState.cpp
-c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gamestate.cpp(115): warning C4018: '<': signed/unsigned mismatch
-c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gamestate.cpp(126): warning C4018: '<': signed/unsigned mismatch
-c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gamestate.cpp(138): warning C4018: '<': signed/unsigned mismatch
+c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gamestate.cpp(135): warning C4018: '<': signed/unsigned mismatch
+c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gamestate.cpp(147): warning C4018: '<': signed/unsigned mismatch
+c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gamestate.cpp(160): warning C4018: '<': signed/unsigned mismatch
   HUD.cpp
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\hud.cpp(12): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
   Land.cpp

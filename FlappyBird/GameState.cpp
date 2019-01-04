@@ -34,6 +34,25 @@ void GameState::Init()
 	_data->assets.LoadTexture("Bird Frame 4", BIRD_FRAME_4_FILEPATH);
 	_data->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
 
+	
+	_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH);
+	_wingSoundBuffer.loadFromFile(WING_SOUND_FILEPATH);
+	_pointSoundBuffer.loadFromFile(POINT_SOUND_FILEPATH);
+	_hitSound.setBuffer(_hitSoundBuffer);
+	_wingSound.setBuffer(_wingSoundBuffer);
+	_pointSound.setBuffer(_pointSoundBuffer);
+	
+	/*
+	_data->assets.LoadSoundBuffer("Hit Sound Buffer", HIT_SOUND_FILEPATH);
+	_data->assets.LoadSoundBuffer("Wing Sound Buffer", WING_SOUND_FILEPATH);
+	_data->assets.LoadSoundBuffer("Point Sound Buffer", POINT_SOUND_FILEPATH);
+
+	_hitSound.setBuffer(this->_data->assets.GetSoundBuffer("Hit Sound Buffer"));
+	_wingSound.setBuffer(this->_data->assets.GetSoundBuffer("Wing Sound Buffer"));
+	_pointSound.setBuffer(this->_data->assets.GetSoundBuffer("Point Sound Buffer"));
+	*/
+	
+
 	// declare new objects
 	pipe = new Pipe(_data);
 	land = new Land(_data);
@@ -77,6 +96,7 @@ void GameState::HandleInput()
 			{
 				_gameState = GameStates::ePlaying;
 				bird->Tap();
+				_wingSound.play();
 			}
 		}
 	}
@@ -118,6 +138,7 @@ void GameState::Update(float dt)
 			{
 				_gameState = GameStates::eGameOver;
 				clock.restart();
+				_hitSound.play();
 			}
 		}
 
@@ -129,6 +150,7 @@ void GameState::Update(float dt)
 			{
 				_gameState = GameStates::eGameOver;
 				clock.restart();
+				_hitSound.play();
 			}
 		}
 
@@ -142,6 +164,7 @@ void GameState::Update(float dt)
 					_score++;
 					hud->UpdateScore(_score);
 					scoringSprites.erase(scoringSprites.begin() + i);
+					_pointSound.play();
 				}
 			}
 		}
