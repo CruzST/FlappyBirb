@@ -20,6 +20,7 @@ c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\gamestate.
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\hud.cpp(12): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
   Land.cpp
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\land.cpp(38): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  main.cpp
   MainMenuState.cpp
   Pipe.cpp
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\pipe.cpp(41): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
@@ -28,6 +29,5 @@ c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\pipe.cpp(5
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\pipe.cpp(61): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
 c:\users\steve cruz\documents\osu\side projects\flappybird\flappybird\pipe.cpp(73): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
   SplashState.cpp
-  main.cpp
   Generating Code...
   FlappyBird.vcxproj -> C:\Users\steve cruz\Documents\OSU\Side Projects\FlappyBird\Debug\FlappyBird.exe
